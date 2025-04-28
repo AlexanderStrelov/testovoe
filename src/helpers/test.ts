@@ -1,12 +1,8 @@
-const test = {
-    age: 18,
-    rope: {
-        age:30
-    }
-}
+console.log('1'); //Sync code
+setTimeout(() => console.log('2'), 0);//macro task
+Promise.resolve().then(() => console.log('3')); //micro task
+console.log('4');//Sync code
+Promise.resolve().then(() => console.log('5')); //micro task
+setTimeout(() => console.log('6'), 10);//macro task
 
-const test2 = {...test}
-
-test2.age = 20 
-
-console.log(test.age)
+//Напиши последовательность вызовов 1,4,3,5,2,6
